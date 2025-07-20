@@ -32,7 +32,9 @@ function drawTree() {
 function handleCommand(text) {
   const lower = text.toLowerCase();
 
-  if (lower.includes("write poem")) {
+  if (lower.includes("hello") || lower.includes("hi")) {
+    speak("Hello, I am Orbit. How can I help you?");
+  } else if (lower.includes("write poem")) {
     speak("Here is a short poem for you. Roses are red, violets are blue, I am your Jarvis, always with you.");
   } else if (lower.includes("draw tree")) {
     drawTree();
