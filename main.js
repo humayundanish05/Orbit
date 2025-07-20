@@ -14,7 +14,11 @@ recognition.continuous = false;
 function speak(text) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'en-US';
-  synth.speak(utter);
+  speechSynthesis.speak(utter);
+
+  // Show response as text on the screen
+  const box = document.getElementById("responseBox");
+  if (box) box.textContent = "🧠 " + text;
 }
 
 // Drawing example
