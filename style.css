@@ -1,0 +1,28 @@
+body {
+  background: #000;
+  color: #0ff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background: #0ff2;
+  border: 1px solid #0ff;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#transcript {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+canvas {
+  margin-top: 30px;
+  border: 2px solid #0ff6;
+  background: #001;
+}
