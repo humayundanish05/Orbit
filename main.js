@@ -33,8 +33,47 @@ function drawTree() {
 }
 
 // Command handler
-function handleCommand(text){const lower=text.toLowerCase();if(lower.includes("hello")||lower.includes("hi")){speak("Hello! I'm Orbit. How can I assist you today?");}else if(lower.includes("write poem")){speak("Here's a short poem: Roses are red, violets are blue, Orbit is here, just for you.");}else if(lower.includes("write funny poem")){speak("Here's a funny one: My code went dancing on the screen, now it's the sassiest AI you've ever seen.");}else if(lower.includes("draw tree")){drawTree();speak("Here's your tree.");}else if(lower.includes("draw sun")){drawSun();speak("Here's your bright sun.");}else if(lower.includes("sing a song")){speak("La la la... I can sing, though not as well as a nightingale.");}else if(lower.includes("tell me a joke")){speak("Why don't robots ever panic? Because they always keep their circuits together.");}else if(lower.includes("good night")){document.body.style.background="#000022";speak("Good night! May your dreams be bug-free.");}else if(lower.includes("who are you")){speak("I am Orbit, your personal web assistant created by Humayun Danish.");}else if(lower.includes("math")){speak("Sure, try saying something like: what is 5 plus 3?");}else if(lower.match(/what is \d+ [+\-*/] \d+/)){try{const result=eval(lower.split("what is ")[1]);speak(`The answer is ${result}`);}catch{speak("I couldn't calculate that.");}}else if(lower.includes("fact")){speak("Did you know? Honey never spoils. Archaeologists found 3000-year-old honey in Egyptian tombs that's still edible.");}else if(lower.includes("compliment me")){speak("You're brilliant, creative, and capable of anything you set your mind to.");}else{speak("Sorry, I didn't understand that. Try saying something like 'write poem' or 'draw sun'.");}}
+function handleCommand(text) {
+  const lower = text.toLowerCase();
 
+  if (lower.includes("hello") || lower.includes("hi")) {
+    speak("Hello! I'm Orbit. How can I assist you today?");
+  } else if (lower.includes("write poem")) {
+    speak("Here's a short poem: Roses are red, violets are blue, Orbit is here, just for you.");
+  } else if (lower.includes("write funny poem")) {
+    speak("Here's a funny one: My code went dancing on the screen, now it's the sassiest AI you've ever seen.");
+  } else if (lower.includes("draw tree")) {
+    drawTree();
+    speak("Here's your tree.");
+  } else if (lower.includes("draw sun")) {
+    drawSun();
+    speak("Here's your bright sun.");
+  } else if (lower.includes("sing a song")) {
+    speak("La la la... I can sing, though not as well as a nightingale.");
+  } else if (lower.includes("tell me a joke")) {
+    speak("Why don't robots ever panic? Because they always keep their circuits together.");
+  } else if (lower.includes("good night")) {
+    document.body.style.background = "#000022";
+    speak("Good night! May your dreams be bug-free.");
+  } else if (lower.includes("who are you")) {
+    speak("I am Orbit, your personal web assistant created by Humayun Danish.");
+  } else if (lower.includes("math")) {
+    speak("Sure, try saying something like: what is 5 plus 3?");
+  } else if (lower.match(/what is \d+ [+\-*/] \d+/)) {
+    try {
+      const result = eval(lower.split("what is ")[1]);
+      speak(`The answer is ${result}`);
+    } catch {
+      speak("I couldn't calculate that.");
+    }
+  } else if (lower.includes("fact")) {
+    speak("Did you know? Honey never spoils. Archaeologists found 3000-year-old honey in Egyptian tombs that's still edible.");
+  } else if (lower.includes("compliment me")) {
+    speak("You're brilliant, creative, and capable of anything you set your mind to.");
+  } else {
+    speak("Sorry, I didn't understand that. Try saying something like 'write poem' or 'draw sun'.");
+  }
+}
 // Start listening
 startBtn.addEventListener("click", () => {
   recognition.start();
